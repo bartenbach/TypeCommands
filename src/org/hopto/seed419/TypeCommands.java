@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.hopto.seed419;
 
 import org.bukkit.ChatColor;
@@ -10,10 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-/**
- *
- * @author seed419
- */
+// For our main class in a craftbukkit plugin, we want to extend JavaPlugin.
 public class TypeCommands extends JavaPlugin {
 
 
