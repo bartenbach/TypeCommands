@@ -16,19 +16,19 @@ public class TypeCommands extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
 
-        // If the command is equal to tc or typecommand
+        // If the command is equal to tc or typecommand - we want to know about it and take action!
         if (label.equalsIgnoreCase("tc") || label.equalsIgnoreCase("typecommand")) {
 
 
-            /* Create a new StringBuilder object - This is in case the command has multiple arguments.
-               IE  "/sethome dog 22"  or something like that...   */
+            /* We create a new StringBuilder object called sb - This is in case the command has multiple arguments.
+               IE  "/sethome dog 22"  or something like that.                                          */
             StringBuilder sb = new StringBuilder();
 
 
             /* All the seperate arguments a player types after a command like "/sethome dog 22" are separated into an
-             * array of strings called args (which is passed then to our onCommand method).  We want to Append everything
-             * the player entered in that command to one string using a for loop and a stringbuilder.  We append a space
-             * after each argument so it comes out as "/sethome dog 22", and not "/sethomedog22"   */
+             * array of strings called args (which is passed then to our onCommand method above).  We want to add
+             * everything the player entered in that command to one string using a for loop and a stringbuilder.  We
+             * append a space after each argument so it comes out as "/sethome dog 22", and not "/sethomedog22"   */
             for (String x : args) {
                 sb.append(x);
                 sb.append(" ");
@@ -43,7 +43,7 @@ public class TypeCommands extends JavaPlugin {
             //We return true at this point because we've done what we needed to do successfully!
 
         }
-        //If the command wasn't tc or typecommand - we don't care about it!
+        //If the command wasn't tc or typecommand - we don't care about it!  We return false and nothing happens!
         return false;
     }
 }
