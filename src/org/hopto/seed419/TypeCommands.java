@@ -21,30 +21,27 @@ public class TypeCommands extends JavaPlugin {
 
 
             /* Create a new StringBuilder object - This is in case the command has multiple arguments.
-               IE  /use item 34 player  or something like that...   */
+               IE  "/sethome dog 22"  or something like that...   */
             StringBuilder sb = new StringBuilder();
 
 
-            /* Append all strings the player typed to one string using a for loop and a stringbuilder.
-               We append a space after each argument so it comes out as expected.   */
+            /* All the seperate arguments a player types after a command like "/sethome dog 22" are separated into an
+             * array of strings called args (which is passed then to our onCommand method).  We want to Append everything
+             * the player entered in that command to one string using a for loop and a stringbuilder.  We append a space
+             * after each argument so it comes out as "/sethome dog 22", and not "/sethomedog22"   */
             for (String x : args) {
                 sb.append(x);
                 sb.append(" ");
             }
 
 
-            //If the sender is a player, broadcast the message in this fashion..
-            if (sender instanceof Player) {
-                getServer().broadcastMessage(ChatColor.YELLOW + "Command: " + ChatColor.WHITE + sb.toString());
-                return true;
-                //We return true at this point because we're done doing what we need to do.
+            /* Now we broadcast our message!  We use sb.toString() to turn the Strings our StringBuilder added for us
+             * Into a String object!  I Messed with the ChatColors a bit to make it look official.
+             */
+            getServer().broadcastMessage(ChatColor.YELLOW + "Command: " + ChatColor.WHITE + sb.toString());
+            return true;
+            //We return true at this point because we've done what we needed to do successfully!
 
-            //If the sender isn't a player, let's pretend to be the server!
-            } else {
-                getServer().broadcastMessage(ChatColor.LIGHT_PURPLE + "[Server] " + sb.toString());
-                return true;
-                //If this happens, we still return true because we successfully did what we wanted to do.
-            }
         }
         //If the command wasn't tc or typecommand - we don't care about it!
         return false;
