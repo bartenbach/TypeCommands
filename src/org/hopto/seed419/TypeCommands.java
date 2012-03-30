@@ -28,8 +28,10 @@ public class TypeCommands extends JavaPlugin {
             StringBuilder sb = new StringBuilder();
 
             //Append all strings the player typed to one string using a for loop and a stringbuilder.
+            //We append a space after each argument so it comes out as expected.
             for (String x : args) {
                 sb.append(x);
+                sb.append(" ");
             }
 
             //If the sender is a player, broadcast the message in this fashion..
