@@ -1,0 +1,9 @@
+name: TypeCommands
+main: org.hopto.seed419.TypeCommands
+version: 0.1
+author: seed419
+commands:
+   tc:
+     aliases: typecommand
+     description: Lets a player chat a command.
+
